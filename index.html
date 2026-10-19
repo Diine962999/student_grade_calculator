@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Grade Calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <p class="eyebrow">STUDENT RESULTS PORTAL</p>
+  <h1>Student Grade Calculator</h1>
+  <p>Enter student scores, calculate grades, and review class performance.</p>
+</header>
+<main class="container">
+<section class="panel">
+  <h2>Add a student's results</h2>
+  <p class="muted">Enter a name and a score from 0 to 100 for each subject.</p>
+  <form id="studentForm" novalidate>
+    <div class="field name-field">
+      <label for="studentName">Student's name</label>
+      <input id="studentName" type="text" placeholder="e.g. Ada Okafor" autocomplete="name">
+      <small class="error" id="studentNameError"></small>
+    </div>
+    <div class="subject-grid">
+      <div class="field"><label for="mathematics">Mathematics</label><input id="mathematics" type="number" min="0" max="100" placeholder="0–100"><small class="error" id="mathematicsError"></small></div>
+      <div class="field"><label for="english">English</label><input id="english" type="number" min="0" max="100" placeholder="0–100"><small class="error" id="englishError"></small></div>
+      <div class="field"><label for="biology">Biology</label><input id="biology" type="number" min="0" max="100" placeholder="0–100"><small class="error" id="biologyError"></small></div>
+      <div class="field"><label for="chemistry">Chemistry</label><input id="chemistry" type="number" min="0" max="100" placeholder="0–100"><small class="error" id="chemistryError"></small></div>
+      <div class="field"><label for="physics">Physics</label><input id="physics" type="number" min="0" max="100" placeholder="0–100"><small class="error" id="physicsError"></small></div>
+    </div>
+    <div class="actions"><button class="btn primary" type="submit">Calculate and add student</button><button class="btn secondary" type="reset">Clear form</button></div>
+    <p class="note">Grade scale: A = 70–100, B = 60–69, C = 50–59, D = 45–49, E = 40–44, F = 0–39.</p>
+  </form>
+</section>
+<section class="stats">
+  <article class="stat"><span>Students registered</span><strong id="studentCount">0</strong></article>
+  <article class="stat"><span>Highest total</span><strong id="highestTotal">—</strong><small id="highestStudent">No students yet</small></article>
+  <article class="stat"><span>Lowest subject average</span><strong id="lowestAverage">—</strong><small id="lowestSubject">No scores yet</small></article>
+</section>
+<section class="panel">
+  <div class="results-heading"><div><h2>Student results</h2><p class="muted">Totals, averages, and grades are calculated automatically.</p></div><div class="table-actions"><input id="searchInput" type="search" placeholder="Search student..." aria-label="Search students"><button id="clearAllButton" class="btn danger" type="button">Clear all</button></div></div>
+  <div class="table-wrap"><table><thead><tr><th>Student</th><th>Maths</th><th>English</th><th>Biology</th><th>Chemistry</th><th>Physics</th><th>Total</th><th>Average</th><th>Grade</th><th>Action</th></tr></thead><tbody id="resultsBody"><tr><td colspan="10" class="empty">No student results yet. Add a student using the form above.</td></tr></tbody></table></div>
+  <p class="note">Subject averages use all students currently in the table.</p>
+</section>
+<footer>Student Grade Calculator · Built with HTML, CSS and JavaScript</footer>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
